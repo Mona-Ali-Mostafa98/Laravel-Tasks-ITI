@@ -31,6 +31,7 @@
     </div>
   
     <div class="container mt-5">
+      <!-- error message -->
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

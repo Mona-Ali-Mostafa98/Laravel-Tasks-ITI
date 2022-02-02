@@ -35,7 +35,7 @@ class PostController extends Controller
         // dd('test'); any logic after dd won't be executed
         //the logic to store post in the db
         // return redirect()->route('posts.index');
-// lab3
+// lab3 validaton
         request()->validate([
             'title' => ['required', 'min:3'],
             'description' => ['required', 'min:5']
