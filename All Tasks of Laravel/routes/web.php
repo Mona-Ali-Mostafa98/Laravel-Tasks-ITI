@@ -14,3 +14,11 @@ Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show')
 Route::get('/posts/{post}/edit',[Postcontroller::class,'edit'])->name('posts.edit');      //edit
 Route::delete('/posts/{post}',[Postcontroller::class,'destroy'])->name('posts.destroy');  //delete
 Route::post('/posts',[PostController::class, 'store'])->name('posts.store');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

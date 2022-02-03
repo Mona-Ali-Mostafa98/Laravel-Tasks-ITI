@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
-
+use App\Http\Requests\StorePostRequest;
 class PostController extends Controller
 {
     public function index()
@@ -29,21 +29,21 @@ class PostController extends Controller
         ]);
     }
 //////////////////////////////////////store//////////////////
-    public function store()
+    public function store(StorePostRequest $request)
     {
 // lab1
         // dd('test'); any logic after dd won't be executed
         //the logic to store post in the db
         // return redirect()->route('posts.index');
-// lab3 validaton
-        request()->validate([
-            'title' => ['required', 'min:3'],
-            'description' => ['required', 'min:5']
-        ],[
-                'title.required' => 'this is the changed message',
-                'title.min' => 'i have changed the min'
+// lab3 validaton write in 
+        // request()->validate([
+        //     'title' => ['required', 'min:3'],
+        //     'description' => ['required', 'min:5']
+        // ],[
+        //         'title.required' => 'this is the changed message',
+        //         'title.min' => 'i have changed the min'
             
-        ]);
+        // ]);
 // lab2
         $data = request()->all(); //global helpar method
         // dd($data);
@@ -90,6 +90,7 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
+    
     public function destroy($postId,Request $req)
     {
         $post=post::findOrFail($postId);
