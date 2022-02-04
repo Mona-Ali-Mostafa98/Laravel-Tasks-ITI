@@ -31,11 +31,11 @@ class PostController extends Controller
 //////////////////////////////////////store//////////////////
     public function store(StorePostRequest $request)
     {
-// lab1
+// lab1 
         // dd('test'); any logic after dd won't be executed
         //the logic to store post in the db
         // return redirect()->route('posts.index');
-// lab3 validaton write in 
+// lab3 validaton write in StorePostRequest.php
         // request()->validate([
         //     'title' => ['required', 'min:3'],
         //     'description' => ['required', 'min:5']
@@ -73,7 +73,7 @@ class PostController extends Controller
 
     public function edit($postId)
     {
-        $post=post::findOrFail($postId);
+        $post=Post::findOrFail($postId);
         $users = User::all();
         return view('posts.edit',[
             'post'=>$post,'users'=>$users
@@ -81,7 +81,7 @@ class PostController extends Controller
     }
 
     public function update($postId,Request $req){
-        $post=post::findOrFail($postId);
+        $post=Post::findOrFail($postId);
         $post->edit([
             'title' => $req['title'],
             'description' => $req['description'],
@@ -90,7 +90,7 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
-    
+
     public function destroy($postId,Request $req)
     {
         $post=post::findOrFail($postId);
