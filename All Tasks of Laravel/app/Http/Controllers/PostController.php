@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
 use App\Http\Requests\StorePostRequest;
+
 class PostController extends Controller
 {
     public function index()
     {
         // query
-        $allPosts = Post::all();  //to retrieve all records
+        // $allPosts = Post::all();  //to retrieve all records
+        $allPosts = Post::paginate(5);
         // // dd($allPosts);
         //  $allPosts = Post::where('title','Test')->get();
 

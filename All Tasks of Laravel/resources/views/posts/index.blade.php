@@ -41,16 +41,11 @@
         @endforeach
     </tbody>
 </table>
-    <nav aria-label="Page navigation example">
-    <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item active"><a class="page-link" href="#" >1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-</nav>
+
+{{ $allPosts->links() }}  <!--add pagination bar using laravel-->
+
 @endsection
+
 <!-- styling on icons -->
 <style>
 table tr th, table tr td {
