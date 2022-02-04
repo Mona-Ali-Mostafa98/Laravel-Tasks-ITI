@@ -13,6 +13,7 @@ class Post extends Model
         'title',
         'description',
         'user_id',
+        'slug' //First step to do slug
     ];
     
     public function user()

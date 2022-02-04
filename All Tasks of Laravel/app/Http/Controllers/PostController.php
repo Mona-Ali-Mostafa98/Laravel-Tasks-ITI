@@ -52,6 +52,7 @@ class PostController extends Controller
             'title' => $data['title'],
             'description' => $data['description'],
             'user_id' => $data['post_creator'],
+            'slug' => str_slug($data['title']), //second step to create slug
 
          // static data 
             // 'title' => 'css',
