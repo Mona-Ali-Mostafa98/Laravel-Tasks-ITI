@@ -35,3 +35,12 @@ Route::get('/auth/callback', function () {
     // dd($user);
     // $user->token
 });
+
+// // login use google
+// Route::get('/auth/redirect', function () {
+//     return Socialite::driver('google')->redirect();
+// })->name('auth.google');
+
+// Route::get('/auth/callback', function () {
+//     $user = Socialite::driver('google')->user();
+// });
