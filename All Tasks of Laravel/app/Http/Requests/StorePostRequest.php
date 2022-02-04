@@ -25,6 +25,8 @@ class StorePostRequest extends FormRequest
     {        return [
         'title' => ['required', 'min:3' ,'unique:posts,title'],   //unique:posts,title': The title has already been taken.
         'description' => ['required', 'min:10'],
+        'post_creator' => ['required' , 'exists:users,id']  //this only one line validation to prevent someone change id from console and make error in website
+        // name of input of html as a key (if write users_id will do nothing)
     ];
 }
 
